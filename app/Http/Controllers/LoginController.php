@@ -12,7 +12,7 @@ class LoginController extends Controller
     }
 
     public function login(Request $req){
-    	if(count(DB::table('students')->where('name',$req->sudentname)->where('password',$req->password)->first())>0){
+    	if(count(DB::table('students')->where('name',$req->studentname)->where('password',$req->password)->first())>0){
     		return redirect()->route('home.index');
     	}
     	else{
